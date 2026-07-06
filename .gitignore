@@ -1,0 +1,8 @@
+.build/
+.swiftpm/
+DerivedData/
+build/
+*.xcarchive
+HaloiOS.xcodeproj/
+.DS_Store
+xcuserdata/
