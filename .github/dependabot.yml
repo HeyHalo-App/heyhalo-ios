@@ -1,10 +1,9 @@
 version: 2
 updates:
-  - package-ecosystem: "swift"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
+  # No "swift" ecosystem here: this is an Xcode app, not a Swift package. Its
+  # SPM dependency (heyhalo-reach-kit) lives in the generated .xcodeproj, which
+  # is gitignored, so there's no Package.swift for Dependabot to scan. The Swift
+  # updater does run on the heyhalo-reach-kit repo, which has a Package.swift.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
