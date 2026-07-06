@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Hey Halo targets iOS 26 / Swift 6, so it needs an Xcode 26 toolchain.
+    # If GitHub-hosted runners don't yet provide it, pin a runner image that
+    # does or disable this workflow until they do.
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Install xcodeproj gem
+        run: gem install xcodeproj
+
+      - name: Generate project
+        run: ruby generate_xcodeproj.rb
+
+      - name: Build (no code signing)
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project HaloiOS.xcodeproj \
+            -scheme HaloiOS \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO

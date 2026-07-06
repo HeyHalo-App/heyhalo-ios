@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/itsSilver/heyhalo-ios/security/advisories/new
+    about: Please report security issues privately, not as a public issue.
+  - name: Questions & ideas
+    url: https://github.com/itsSilver/heyhalo-ios/discussions
+    about: Ask a question or float an idea in Discussions.
+  - name: Product feedback & roadmap
+    url: https://heyhalo.app/feedback
+    about: Feature votes and the public roadmap live here.
