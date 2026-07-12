@@ -199,7 +199,7 @@ struct ChatView: View {
                 .font(HaloiOSStyle.bodyEmphasis)
                 .foregroundStyle(HaloiOSStyle.textPrimary)
             Text(
-                "I'm on your Mac. Ask me to recall something, draft a note, or check on your day. I answer from what I remember, and this never leaves your iCloud."
+                "I'm on your computer. Ask me to recall something, draft a note, or check on your day. I answer from what I remember, and this never leaves your iCloud."
             )
             .font(HaloiOSStyle.body)
             .foregroundStyle(HaloiOSStyle.textSecondary)
